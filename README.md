@@ -1,57 +1,27 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  [![Gitter](https://badges.gitter.im/cesanta/mongoose-os.svg)](https://gitter.im/cesanta/mongoose-os?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-# MEL-AC lib for Mongoose OS
+# MHI-AC lib for Mongoose OS
 
-***Mitsubishi Electric*** AC (air condition unit) and ATW (air to water unit) control by UART using amasing IoT platform - ***Mongoose OS***
+***Mitsubishi Heavy Industries*** AC (air condition unit) control by SPI using amasing IoT platform - ***Mongoose OS***
 
-Inspired by [great research](https://nicegear.nz/blog/hacking-a-mitsubishi-heat-pump-air-conditioner/) made by [Hadley Rich](https://github.com/hadleyrich) from New Zealand and [SwiCago](https://github.com/SwiCago), who sorted all out and made an [Arduino implementation](https://github.com/SwiCago/HeatPump) and tutorial
+Inspired by (https://github.com/mongoose-os-libs/mel-ac) and (https://github.com/absalom-muc/MHI-AC-Ctrl)
 
 ## Hardware
 
-The protocol was sniffed from original `Mitsubishi MAC-567IF-E` controller:
 
-<img src="https://github.com/mongoose-os-libs/mel-ac/blob/master/docs/MAC-567IF-E.png"/>
-
-Mitsubishi indoor unit's control board has ***CN105*** (RED) connector for communication purposes.
-The communication performed by UART @ 2400 8E1 (5V TTL). The ***CN105*** connector pinouts (1..5) = 12V, GND, 5V,TX, RX
-
-### RobotDyn WiFi-NodeM (ESP8266)
-
-<img src="https://github.com/mongoose-os-libs/mel-ac/blob/master/docs/mel-ac-nodem.png"/>
-
-### ESP-01 + 5V adapter (ESP8266)
-
-<img src="https://github.com/mongoose-os-libs/mel-ac/blob/master/docs/mel-ac-esp-01.png"/>
-
-### Doit.am DevKit V1 (ESP32)
-
-There are `UART0` and `UART2` available for this board
-
-<img src="https://github.com/mongoose-os-libs/mel-ac/blob/master/docs/mel-ac-devkit-v1.png"/>
 
 ## Compatability
 
-All model coming with ***CN105*** on an indoor unit's board, except PCA-RP71HAQ, PEA-RP400GAQ and PEA-RP500GAQ
-
-More details available on [MELCloud](https://innovations.mitsubishi-les.com/en/controls/wifi-adapter) and [KumoCloud](https://www.mitsubishicomfort.com/kumocloud/compatibility) pages
+TBD
 
 ## Mounting
 
-***IMPORTANT:*** When mounting the ```MEC-AC``` unit inside an indoor unit, refer to the installation manual of the indoor unit. 
-Do not mount the Interface unit inside the indoor unit, if not mentioned
-
-```AC```'s indoor unit mount:
-
-<img src="https://github.com/mongoose-os-libs/mel-ac/blob/master/docs/ac_mount.png"/>
-
-
-```ATW```'s indoor unit mount:
-
-<img src="https://github.com/mongoose-os-libs/mel-ac/blob/master/docs/atw_mount.png"/>
+TBD
 
 ## Software
 
 ### Comfig chema
+TBD
 
 ```javascript
 "mel_ac": {
@@ -64,7 +34,7 @@ Do not mount the Interface unit inside the indoor unit, if not mentioned
 ```
 
 ### RPC
-
+TBD
 If RPC is present in your project, MEL-AC will add it's command handlers: `MEL-AC.GetParams` and `MEL-AC.SetParams` 
 
 ```javascript
@@ -83,7 +53,7 @@ $ mos --port mqtt://192.168.1.9/esp32_585E14 call RPC.list
 #### Read current params from HVAC
 
 ##### WebSockets
-
+TBD
 ```javascript
 $ mos call --port ws://192.168.1.216/rpc MEL-AC.GetParams
 {
@@ -100,14 +70,14 @@ $ mos call --port ws://192.168.1.216/rpc MEL-AC.GetParams
 }
 ```
 ##### HTTP
-
+TBD
 ```javascript
 http://192.168.1.216/rpc/MEL-AC.GetParams
 {"connected": true, "power": 0, "mode": 1, "setpoint": 20.0, "fan": 2, "vane_vert": 0, "vane_horiz": 3, "isee": true, "operating": false, "room": 22.0}
 ```
 
 ##### MQTT
-
+TBD
 ```javascript
 $ mos --port mqtt://192.168.1.9/esp32_585E14 call MEL-AC.GetParams 
 {
