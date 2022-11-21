@@ -2,7 +2,7 @@
 
 # MHI-AC lib for Mongoose OS
 
-***Mitsubishi Heavy Industries*** AC (air condition unit) control by SPI using amasing IoT platform - ***Mongoose OS***
+***Mitsubishi Heavy Industries*** AC (air condition unit) control by SPI using amazing IoT platform - ***Mongoose OS***
 
 Inspired by (https://github.com/mongoose-os-libs/mel-ac) and (https://github.com/absalom-muc/MHI-AC-Ctrl)
 

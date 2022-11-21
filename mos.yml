@@ -1,7 +1,7 @@
-author: d4rkmen <darkmen@i.ua>
-description: Library that implements Mitsubishi Electric AC and ATW unit communication by UART
+author: nikwest <github@nikwest.de>
+description: Library that implements Mitsubishi Heavy Industires AC communication by SPI
 type: lib
-version: 1.1
+version: 1.0
 
 tags:
   - c
@@ -14,14 +14,15 @@ includes:
   - include
 
 config_schema:
-  - ["mel_ac", "o", {title: "MEL-AC settings"}]
-  - ["mel_ac.enable", "b", true, {title: "Enable MEL-AC"}]
-  - ["mel_ac.uart_no", "i", 0, {title: "UART number"}]
-  - ["mel_ac.uart_baud_rate", "i", 2400, {title: "UART baud rate"}]
-  - ["mel_ac.period_ms", "i", 250, {title: "Service timer"}]
-  - ["mel_ac.rpc_enable", "b", true, {title: "Enable MEL-AC rpc handlers"}]
+  - ["mhi_ac", "o", {title: "MHI-AC settings"}]
+  - ["mhi_ac.enable", "b", true, {title: "Enable MHI-AC"}]
+  - ["mhi_ac.mosi_pin", "i", 17, {title: "MOSI Pin"}]
+  - ["mhi_ac.miso_pin", "i", 16, {title: "MISO Pin"}]
+  - ["mhi_ac.scl_pin", "i", 18, {title: "SCL Pin"}]
+  - ["mhi_ac.rpc_enable", "b", true, {title: "Enable MHI-AC rpc handlers"}]
 
 libs:
+  - location: https://github.com/mongoose-os-libs/spi
   - location: https://github.com/mongoose-os-libs/rpc-common
 
 # Used by the mos tool to catch mos binaries incompatible with this file format
